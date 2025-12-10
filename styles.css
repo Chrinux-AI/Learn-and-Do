@@ -85,7 +85,13 @@ body.dark .header.neumorphic,
 body.high-contrast .header.neumorphic,
 body.midnight .header.neumorphic,
 body.cyberpunk .header.neumorphic,
-body.amethyst .header.neumorphic {
+body.amethyst .header.neumorphic,
+body.forest .header.neumorphic,
+body.neon .header.neumorphic,
+body.galaxy .header.neumorphic,
+body.sakura .header.neumorphic,
+body.arctic .header.neumorphic,
+body.sunset .header.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -154,7 +160,13 @@ body.dark .btn.neumorphic,
 body.high-contrast .btn.neumorphic,
 body.midnight .btn.neumorphic,
 body.cyberpunk .btn.neumorphic,
-body.amethyst .btn.neumorphic {
+body.amethyst .btn.neumorphic,
+body.forest .btn.neumorphic,
+body.neon .btn.neumorphic,
+body.galaxy .btn.neumorphic,
+body.sakura .btn.neumorphic,
+body.arctic .btn.neumorphic,
+body.sunset .btn.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -209,16 +221,56 @@ body.amethyst .btn.neumorphic {
 
 .progress-controls {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 16px;
 }
 
-/* Theme Controls */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.year-picker, .month-picker {
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(229, 231, 235, 0.5);
+    color: #111827;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.year-picker:focus, .month-picker:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+}
+
+body.dark .year-picker, body.high-contrast .year-picker, body.midnight .year-picker,
+body.cyberpunk .year-picker, body.amethyst .year-picker, body.forest .year-picker,
+body.neon .year-picker, body.galaxy .year-picker, body.sakura .year-picker,
+body.arctic .year-picker, body.sunset .year-picker {
+    background: rgba(55, 65, 81, 0.5);
+    color: inherit;
+}
+
+.year-picker:hover, .month-picker:hover {
+    background: rgba(209, 213, 219, 0.7);
+}
+
+body.dark .year-picker:hover, body.high-contrast .year-picker:hover, body.midnight .year-picker:hover,
+body.cyberpunk .year-picker:hover, body.amethyst .year-picker:hover, body.forest .year-picker:hover,
+body.neon .year-picker:hover, body.galaxy .year-picker:hover, body.sakura .year-picker:hover,
+body.arctic .year-picker:hover, body.sunset .year-picker:hover {
+    background: rgba(75, 85, 99, 0.7);
+}
+
 .theme-controls {
     display: flex;
     gap: 12px;
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1000;
 }
 
 .theme-toggle-wrapper {
@@ -270,11 +322,17 @@ body.amethyst .btn.neumorphic {
     pointer-events: auto;
 }
 
-body.dark .theme-dropdown.neumorphic,
-body.high-contrast .theme-dropdown.neumorphic,
-body.midnight .theme-dropdown.neumorphic,
-body.cyberpunk .theme-dropdown.neumorphic,
-body.amethyst .theme-dropdown.neumorphic {
+body.dark .theme-dropdown,
+body.high-contrast .theme-dropdown,
+body.midnight .theme-dropdown,
+body.cyberpunk .theme-dropdown,
+body.amethyst .theme-dropdown,
+body.forest .theme-dropdown,
+body.neon .theme-dropdown,
+body.galaxy .theme-dropdown,
+body.sakura .theme-dropdown,
+body.arctic .theme-dropdown,
+body.sunset .theme-dropdown {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -298,7 +356,6 @@ body.amethyst .theme-dropdown.neumorphic {
     color: #ffffff;
 }
 
-/* Navigation */
 .month-nav {
     display: flex;
     gap: 12px;
@@ -328,7 +385,13 @@ body.dark .nav-btn.neumorphic,
 body.high-contrast .nav-btn.neumorphic,
 body.midnight .nav-btn.neumorphic,
 body.cyberpunk .nav-btn.neumorphic,
-body.amethyst .nav-btn.neumorphic {
+body.amethyst .nav-btn.neumorphic,
+body.forest .nav-btn.neumorphic,
+body.neon .nav-btn.neumorphic,
+body.galaxy .nav-btn.neumorphic,
+body.sakura .nav-btn.neumorphic,
+body.arctic .nav-btn.neumorphic,
+body.sunset .nav-btn.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -341,7 +404,6 @@ body.amethyst .nav-btn.neumorphic {
     color: #ffffff;
 }
 
-/* Tab Content */
 .tab-content {
     display: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -358,7 +420,6 @@ body.amethyst .nav-btn.neumorphic {
     transform: translateY(20px);
 }
 
-/* Month Header */
 .month-header {
     display: flex;
     justify-content: space-between;
@@ -380,7 +441,13 @@ body.dark .month-header.neumorphic,
 body.high-contrast .month-header.neumorphic,
 body.midnight .month-header.neumorphic,
 body.cyberpunk .month-header.neumorphic,
-body.amethyst .month-header.neumorphic {
+body.amethyst .month-header.neumorphic,
+body.forest .month-header.neumorphic,
+body.neon .month-header.neumorphic,
+body.galaxy .month-header.neumorphic,
+body.sakura .month-header.neumorphic,
+body.arctic .month-header.neumorphic,
+body.sunset .month-header.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -402,7 +469,6 @@ body.amethyst .month-header.neumorphic {
     transition: color 0.4s ease;
 }
 
-/* Days Grid */
 .days-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -419,6 +485,7 @@ body.amethyst .month-header.neumorphic {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
     transform: translateY(20px);
+    position: relative;
 }
 
 .day-card.neumorphic {
@@ -429,7 +496,13 @@ body.dark .day-card.neumorphic,
 body.high-contrast .day-card.neumorphic,
 body.midnight .day-card.neumorphic,
 body.cyberpunk .day-card.neumorphic,
-body.amethyst .day-card.neumorphic {
+body.amethyst .day-card.neumorphic,
+body.forest .day-card.neumorphic,
+body.neon .day-card.neumorphic,
+body.galaxy .day-card.neumorphic,
+body.sakura .day-card.neumorphic,
+body.arctic .day-card.neumorphic,
+body.sunset .day-card.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -486,7 +559,13 @@ body.dark .completion-toggle,
 body.high-contrast .completion-toggle,
 body.midnight .completion-toggle,
 body.cyberpunk .completion-toggle,
-body.amethyst .completion-toggle {
+body.amethyst .completion-toggle,
+body.forest .completion-toggle,
+body.neon .completion-toggle,
+body.galaxy .completion-toggle,
+body.sakura .completion-toggle,
+body.arctic .completion-toggle,
+body.sunset .completion-toggle {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -501,6 +580,70 @@ body.amethyst .completion-toggle {
 
 .today {
     box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2), 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Resources in Cards (Tooltip) */
+.day-card .resource-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.day-card:hover .resource-tooltip {
+    opacity: 1;
+}
+
+.resource-link {
+    color: #10b981;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+/* Daily Resources in Modal */
+.daily-resources {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.daily-resources h4 {
+    font-size: 0.9rem;
+    color: #10b981;
+    margin-bottom: 8px;
+}
+
+.daily-resources ul {
+    list-style: none;
+    gap: 4px;
+}
+
+.daily-resources li {
+    margin-bottom: 4px;
+}
+
+.daily-resources a {
+    color: #10b981;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.daily-resources a:hover {
+    text-decoration: underline;
 }
 
 /* Modal */
@@ -538,7 +681,13 @@ body.dark .modal-content.neumorphic,
 body.high-contrast .modal-content.neumorphic,
 body.midnight .modal-content.neumorphic,
 body.cyberpunk .modal-content.neumorphic,
-body.amethyst .modal-content.neumorphic {
+body.amethyst .modal-content.neumorphic,
+body.forest .modal-content.neumorphic,
+body.neon .modal-content.neumorphic,
+body.galaxy .modal-content.neumorphic,
+body.sakura .modal-content.neumorphic,
+body.arctic .modal-content.neumorphic,
+body.sunset .modal-content.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -593,7 +742,13 @@ body.dark #dailyNotes.neumorphic,
 body.high-contrast #dailyNotes.neumorphic,
 body.midnight #dailyNotes.neumorphic,
 body.cyberpunk #dailyNotes.neumorphic,
-body.amethyst #dailyNotes.neumorphic {
+body.amethyst #dailyNotes.neumorphic,
+body.forest #dailyNotes.neumorphic,
+body.neon #dailyNotes.neumorphic,
+body.galaxy #dailyNotes.neumorphic,
+body.sakura #dailyNotes.neumorphic,
+body.arctic #dailyNotes.neumorphic,
+body.sunset #dailyNotes.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -628,7 +783,13 @@ body.dark .resources-section.neumorphic,
 body.high-contrast .resources-section.neumorphic,
 body.midnight .resources-section.neumorphic,
 body.cyberpunk .resources-section.neumorphic,
-body.amethyst .resources-section.neumorphic {
+body.amethyst .resources-section.neumorphic,
+body.forest .resources-section.neumorphic,
+body.neon .resources-section.neumorphic,
+body.galaxy .resources-section.neumorphic,
+body.sakura .resources-section.neumorphic,
+body.arctic .resources-section.neumorphic,
+body.sunset .resources-section.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -675,11 +836,23 @@ body.high-contrast #resourceUrl.neumorphic,
 body.midnight #resourceUrl.neumorphic,
 body.cyberpunk #resourceUrl.neumorphic,
 body.amethyst #resourceUrl.neumorphic,
+body.forest #resourceUrl.neumorphic,
+body.neon #resourceUrl.neumorphic,
+body.galaxy #resourceUrl.neumorphic,
+body.sakura #resourceUrl.neumorphic,
+body.arctic #resourceUrl.neumorphic,
+body.sunset #resourceUrl.neumorphic,
 body.dark #resourceNotes.neumorphic,
 body.high-contrast #resourceNotes.neumorphic,
 body.midnight #resourceNotes.neumorphic,
 body.cyberpunk #resourceNotes.neumorphic,
-body.amethyst #resourceNotes.neumorphic {
+body.amethyst #resourceNotes.neumorphic,
+body.forest #resourceNotes.neumorphic,
+body.neon #resourceNotes.neumorphic,
+body.galaxy #resourceNotes.neumorphic,
+body.sakura #resourceNotes.neumorphic,
+body.arctic #resourceNotes.neumorphic,
+body.sunset #resourceNotes.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -726,11 +899,23 @@ body.high-contrast .suggested-resources li.neumorphic,
 body.midnight .suggested-resources li.neumorphic,
 body.cyberpunk .suggested-resources li.neumorphic,
 body.amethyst .suggested-resources li.neumorphic,
+body.forest .suggested-resources li.neumorphic,
+body.neon .suggested-resources li.neumorphic,
+body.galaxy .suggested-resources li.neumorphic,
+body.sakura .suggested-resources li.neumorphic,
+body.arctic .suggested-resources li.neumorphic,
+body.sunset .suggested-resources li.neumorphic,
 body.dark .saved-resources li.neumorphic,
 body.high-contrast .saved-resources li.neumorphic,
 body.midnight .saved-resources li.neumorphic,
 body.cyberpunk .saved-resources li.neumorphic,
-body.amethyst .saved-resources li.neumorphic {
+body.amethyst .saved-resources li.neumorphic,
+body.forest .saved-resources li.neumorphic,
+body.neon .saved-resources li.neumorphic,
+body.galaxy .saved-resources li.neumorphic,
+body.sakura .saved-resources li.neumorphic,
+body.arctic .saved-resources li.neumorphic,
+body.sunset .saved-resources li.neumorphic {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -766,7 +951,7 @@ body.amethyst .saved-resources li.neumorphic {
 
 /* Error Message */
 .error-message {
-    background: rgba(254, 226, 226, 0.9);
+    background: rgba(254, 226, 226, 0.09);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     color: #991b1b;
@@ -776,100 +961,672 @@ body.amethyst .saved-resources li.neumorphic {
     margin-top: 20px;
 }
 
-/* Theme Styles */
-body.light {
-    background: #e5e7eb;
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 1rem;
+    color: #10b981;
+}
+
+.spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #10b981;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    transition: opacity 0.4s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 32px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 640px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.95);
+}
+
+.modal-content.neumorphic {
+    background: rgba(229, 231, 235, 0.5);
+}
+
+body.dark .modal-content.neumorphic,
+body.high-contrast .modal-content.neumorphic,
+body.midnight .modal-content.neumorphic,
+body.cyberpunk .modal-content.neumorphic,
+body.amethyst .modal-content.neumorphic,
+body.forest .modal-content.neumorphic,
+body.neon .modal-content.neumorphic,
+body.galaxy .modal-content.neumorphic,
+body.sakura .modal-content.neumorphic,
+body.arctic .modal-content.neumorphic,
+body.sunset .modal-content.neumorphic {
+    background: rgba(55, 65, 81, 0.5);
+}
+
+.modal-content:focus-within {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
     color: #111827;
 }
 
-body.pastel {
-    background: #f3e8ff;
-    color: #4b0082;
+.questions {
+    margin-bottom: 20px;
 }
 
-body.pastel .background-gradient {
-    background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 50%, #e9d5ff 100%);
-    opacity: 0.25;
+.question-item {
+    font-size: 0.9rem;
+    color: #374151;
+    margin: 10px 0;
+    transition: color 0.4s ease;
 }
 
-body.cloud {
-    background: #e0f2fe;
-    color: #1e3a8a;
+#dailyNotes {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #111827;
+    font-size: 0.9rem;
+    resize: vertical;
+    transition: all 0.4s ease;
 }
 
-body.cloud .background-gradient {
-    background: linear-gradient(135deg, #bae6fd 0%, #bfdbfe 50%, #dbeafe 100%);
-    opacity: 0.3;
+#dailyNotes.neumorphic {
+    background: rgba(229, 231, 235, 0.5);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.1);
 }
 
-body.ivory {
-    background: #f8f1e9;
-    color: #3f2a1d;
+body.dark #dailyNotes.neumorphic,
+body.high-contrast #dailyNotes.neumorphic,
+body.midnight #dailyNotes.neumorphic,
+body.cyberpunk #dailyNotes.neumorphic,
+body.amethyst #dailyNotes.neumorphic,
+body.forest #dailyNotes.neumorphic,
+body.neon #dailyNotes.neumorphic,
+body.galaxy #dailyNotes.neumorphic,
+body.sakura #dailyNotes.neumorphic,
+body.arctic #dailyNotes.neumorphic,
+body.sunset #dailyNotes.neumorphic {
+    background: rgba(55, 65, 81, 0.5);
 }
 
-body.ivory .background-gradient {
-    background: linear-gradient(135deg, #fdf6e3 0%, #f5e8d3 50%, #e8d5b9 100%);
-    opacity: 0.25;
+#dailyNotes:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+    outline: none;
 }
 
-body.mint {
-    background: #e6fffa;
-    color: #064e3b;
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
 }
 
-body.mint .background-gradient {
-    background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 50%, #34d399 100%);
-    opacity: 0.3;
+.daily-resources {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
-body.dark {
-    background: #111827;
-    color: #f3f4f6;
+.daily-resources h4 {
+    font-size: 0.9rem;
+    color: #10b981;
+    margin-bottom: 8px;
 }
 
-body.dark .background-gradient {
-    background: linear-gradient(135deg, #064e3b 0%, #1e3a8a 50%, #4c1d95 100%);
-    opacity: 0.4;
+.daily-resources ul {
+    list-style: none;
+    gap: 4px;
 }
 
-body.high-contrast {
-    background: #000000;
-    color: #ffffff;
+.daily-resources li {
+    margin-bottom: 4px;
 }
 
-body.high-contrast .background-gradient {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3f3f3f 100%);
-    opacity: 0.5;
+.daily-resources a {
+    color: #10b981;
+    font-size: 0.85rem;
+    text-decoration: none;
 }
 
-body.midnight {
-    background: #0f172a;
-    color: #e2e8f0;
+.daily-resources a:hover {
+    text-decoration: underline;
 }
 
-body.midnight .background-gradient {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2d4a9f 50%, #3b82f6 100%);
-    opacity: 0.4;
+/* Resources Section */
+.resources-section {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 32px;
+    border-radius: 24px;
+    margin-top: 32px;
+    transition: all 0.4s ease;
 }
 
-body.cyberpunk {
-    background: #1c2526;
-    color: #00f7ff;
+.resources-section.neumorphic {
+    background: rgba(229, 231, 235, 0.5);
 }
 
-body.cyberpunk .background-gradient {
-    background: linear-gradient(135deg, #ff007a 0%, #00f7ff 50%, #ff00ff 100%);
-    opacity: 0.35;
+body.dark .resources-section.neumorphic,
+body.high-contrast .resources-section.neumorphic,
+body.midnight .resources-section.neumorphic,
+body.cyberpunk .resources-section.neumorphic,
+body.amethyst .resources-section.neumorphic,
+body.forest .resources-section.neumorphic,
+body.neon .resources-section.neumorphic,
+body.galaxy .resources-section.neumorphic,
+body.sakura .resources-section.neumorphic,
+body.arctic .resources-section.neumorphic,
+body.sunset .resources-section.neumorphic {
+    background: rgba(55, 65, 81, 0.5);
 }
 
-body.amethyst {
-    background: #2e1065;
-    color: #ede9fe;
+.resources-section h2,
+.resources-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-body.amethyst .background-gradient {
-    background: linear-gradient(135deg, #6b21a8 0%, #a855f7 50%, #d8b4fe 100%);
-    opacity: 0.4;
+.resources-section h3 {
+    font-size: 1.25rem;
+}
+
+.resource-input {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+#resourceUrl,
+#resourceNotes {
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #111827;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#resourceUrl.neumorphic,
+#resourceNotes.neumorphic {
+    background: rgba(229, 231, 235, 0.5);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark #resourceUrl.neumorphic,
+body.high-contrast #resourceUrl.neumorphic,
+body.midnight #resourceUrl.neumorphic,
+body.cyberpunk #resourceUrl.neumorphic,
+body.amethyst #resourceUrl.neumorphic,
+body.forest #resourceUrl.neumorphic,
+body.neon #resourceUrl.neumorphic,
+body.galaxy #resourceUrl.neumorphic,
+body.sakura #resourceUrl.neumorphic,
+body.arctic #resourceUrl.neumorphic,
+body.sunset #resourceUrl.neumorphic,
+body.dark #resourceNotes.neumorphic,
+body.high-contrast #resourceNotes.neumorphic,
+body.midnight #resourceNotes.neumorphic,
+body.cyberpunk #resourceNotes.neumorphic,
+body.amethyst #resourceNotes.neumorphic,
+body.forest #resourceNotes.neumorphic,
+body.neon #resourceNotes.neumorphic,
+body.galaxy #resourceNotes.neumorphic,
+body.sakura #resourceNotes.neumorphic,
+body.arctic #resourceNotes.neumorphic,
+body.sunset #resourceNotes.neumorphic {
+    background: rgba(55, 65, 81, 0.5);
+}
+
+#resourceUrl:focus,
+#resourceNotes:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+    outline: none;
+}
+
+#resourceNotes {
+    height: 100px;
+    resize: vertical;
+}
+
+.suggested-resources,
+.saved-resources {
+    margin-top: 24px;
+}
+
+.suggested-resources ul,
+.saved-resources ul {
+    list-style: none;
+}
+
+.suggested-resources li,
+.saved-resources li {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.suggested-resources li.neumorphic,
+.saved-resources li.neumorphic {
+    background: rgba(229, 231, 235, 0.5);
+}
+
+body.dark .suggested-resources li.neumorphic,
+body.high-contrast .suggested-resources li.neumorphic,
+body.midnight .suggested-resources li.neumorphic,
+body.cyberpunk .suggested-resources li.neumorphic,
+body.amethyst .suggested-resources li.neumorphic,
+body.forest .suggested-resources li.neumorphic,
+body.neon .suggested-resources li.neumorphic,
+body.galaxy .suggested-resources li.neumorphic,
+body.sakura .suggested-resources li.neumorphic,
+body.arctic .suggested-resources li.neumorphic,
+body.sunset .suggested-resources li.neumorphic,
+body.dark .saved-resources li.neumorphic,
+body.high-contrast .saved-resources li.neumorphic,
+body.midnight .saved-resources li.neumorphic,
+body.cyberpunk .saved-resources li.neumorphic,
+body.amethyst .saved-resources li.neumorphic,
+body.forest .saved-resources li.neumorphic,
+body.neon .saved-resources li.neumorphic,
+body.galaxy .saved-resources li.neumorphic,
+body.sakura .saved-resources li.neumorphic,
+body.arctic .saved-resources li.neumorphic,
+body.sunset .saved-resources li.neumorphic {
+    background: rgba(55, 65, 81, 0.5);
+}
+
+.suggested-resources li:hover,
+.saved-resources li:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.15);
+}
+
+.suggested-resources a,
+.saved-resources a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.suggested-resources a:hover,
+.saved-resources a:hover {
+    text-decoration: underline;
+}
+
+.resource-meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 8px;
+}
+
+.resource-notes {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-top: 8px;
+}
+
+/* Error Message */
+.error-message {
+    background: rgba(254, 226, 226, 0.09);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    color: #991b1b;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 1rem;
+    color: #10b981;
+}
+
+.spinner {
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #10b981;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Day Card Resources Tooltip */
+.day-card .resource-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.day-card:hover .resource-tooltip {
+    opacity: 1;
+}
+
+.resource-link {
+    color: #10b981;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+/* Daily Resources in Modal */
+.daily-resources {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.daily-resources h4 {
+    font-size: 0.9rem;
+    color: #10b981;
+    margin-bottom: 8px;
+}
+
+.daily-resources ul {
+    list-style: none;
+    gap: 4px;
+}
+
+.daily-resources li {
+    margin-bottom: 4px;
+}
+
+.daily-resources a {
+    color: #10b981;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.daily-resources a:hover {
+    text-decoration: underline;
+}
+
+/* Analytics Styles */
+#analyticsContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.stat-card span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+#progressChart {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
+
+.monthly-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.monthly-stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.monthly-stat h5 {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.monthly-stat span {
+    font-weight: 600;
+    color: #10b981;
+}
+
+.resource-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-item {
+    margin-bottom: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.resource-item a {
+    color: #10b981;
+    text-decoration: none;
+}
+
+.resource-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px 24px;
+    }
+    .progress-bar {
+        width: 100%;
+        margin: 16px 0;
+    }
+    .days-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 24px;
+    }
+    .month-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 24px;
+    }
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+    .theme-dropdown {
+        top: 50px;
+        min-width: 120px;
+    }
+    .header-right {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .year-picker, .month-picker {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .month-header h2 {
+        font-size: 1.25rem;
+    }
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    .theme-toggle {
+        height: 40px;
+    }
+    .modal-content {
+        padding: 24px;
+    }
+}
+
+/* Premium Theme Styles */
+body.sunset {
+  background: #1a0b2e;
+  color: #ffe4e1;
+}
+body.sunset .background-gradient {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fbc2eb 100%);
+  opacity: 0.4;
+}
+
+body.forest {
+  background: #0d1f14;
+  color: #e7f5e9;
+}
+body.forest .background-gradient {
+  background: linear-gradient(135deg, #14532d 0%, #166534 50%, #22c55e 100%);
+  opacity: 0.35;
+}
+
+body.neon {
+  background: #050505;
+  color: #00ffcc;
+}
+body.neon .background-gradient {
+  background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
+  opacity: 0.35;
+}
+body.neon .btn-primary {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+body.galaxy {
+  background: radial-gradient(circle at 20% 20%, #0f172a 0%, #1e3a8a 60%, #111827 100%);
+  color: #e0e7ff;
+}
+body.galaxy .background-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #f472b6 100%);
+  opacity: 0.4;
+}
+
+body.sakura {
+  background: #fff0f5;
+  color: #6b0f1a;
+}
+body.sakura .background-gradient {
+  background: linear-gradient(135deg, #ffe4e6 0%, #fbcfe8 50%, #f9a8d4 100%);
+  opacity: 0.3;
+}
+
+body.arctic {
+  background: #e0f7fa;
+  color: #004d40;
+}
+body.arctic .background-gradient {
+  background: linear-gradient(135deg, #b2f5ea 0%, #81e6d9 50%, #38bdf8 100%);
+  opacity: 0.3;
 }
 
 body.pastel .header,
@@ -880,7 +1637,13 @@ body.dark .header,
 body.high-contrast .header,
 body.midnight .header,
 body.cyberpunk .header,
-body.amethyst .header {
+body.amethyst .header,
+body.sunset .header,
+body.forest .header,
+body.neon .header,
+body.galaxy .header,
+body.sakura .header,
+body.arctic .header {
     background: rgba(55, 65, 81, 0.15);
 }
 
@@ -892,7 +1655,13 @@ body.dark .month-header,
 body.high-contrast .month-header,
 body.midnight .month-header,
 body.cyberpunk .month-header,
-body.amethyst .month-header {
+body.amethyst .month-header,
+body.sunset .month-header,
+body.forest .month-header,
+body.neon .month-header,
+body.galaxy .month-header,
+body.sakura .month-header,
+body.arctic .month-header {
     background: rgba(55, 65, 81, 0.15);
 }
 
@@ -904,7 +1673,13 @@ body.dark .day-card,
 body.high-contrast .day-card,
 body.midnight .day-card,
 body.cyberpunk .day-card,
-body.amethyst .day-card {
+body.amethyst .day-card,
+body.sunset .day-card,
+body.forest .day-card,
+body.neon .day-card,
+body.galaxy .day-card,
+body.sakura .day-card,
+body.arctic .day-card {
     background: rgba(55, 65, 81, 0.15);
     color: inherit;
 }
@@ -917,7 +1692,13 @@ body.dark .day-card.completed,
 body.high-contrast .day-card.completed,
 body.midnight .day-card.completed,
 body.cyberpunk .day-card.completed,
-body.amethyst .day-card.completed {
+body.amethyst .day-card.completed,
+body.sunset .day-card.completed,
+body.forest .day-card.completed,
+body.neon .day-card.completed,
+body.galaxy .day-card.completed,
+body.sakura .day-card.completed,
+body.arctic .day-card.completed {
     background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.25));
 }
 
@@ -929,7 +1710,13 @@ body.dark .progress-bar,
 body.high-contrast .progress-bar,
 body.midnight .progress-bar,
 body.cyberpunk .progress-bar,
-body.amethyst .progress-bar {
+body.amethyst .progress-bar,
+body.sunset .progress-bar,
+body.forest .progress-bar,
+body.neon .progress-bar,
+body.galaxy .progress-bar,
+body.sakura .progress-bar,
+body.arctic .progress-bar {
     background: rgba(55, 65, 81, 0.2);
 }
 
@@ -941,7 +1728,13 @@ body.dark .progress-fill,
 body.high-contrast .progress-fill,
 body.midnight .progress-fill,
 body.cyberpunk .progress-fill,
-body.amethyst .progress-fill {
+body.amethyst .progress-fill,
+body.sunset .progress-fill,
+body.forest .progress-fill,
+body.neon .progress-fill,
+body.galaxy .progress-fill,
+body.sakura .progress-fill,
+body.arctic .progress-fill {
     background: linear-gradient(90deg, #10b981, #059669);
     box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
@@ -954,7 +1747,13 @@ body.dark .btn,
 body.high-contrast .btn,
 body.midnight .btn,
 body.cyberpunk .btn,
-body.amethyst .btn {
+body.amethyst .btn,
+body.sunset .btn,
+body.forest .btn,
+body.neon .btn,
+body.galaxy .btn,
+body.sakura .btn,
+body.arctic .btn {
     background: rgba(55, 65, 81, 0.15);
     color: inherit;
 }
@@ -967,7 +1766,13 @@ body.dark .btn:hover,
 body.high-contrast .btn:hover,
 body.midnight .btn:hover,
 body.cyberpunk .btn:hover,
-body.amethyst .btn:hover {
+body.amethyst .btn:hover,
+body.sunset .btn:hover,
+body.forest .btn:hover,
+body.neon .btn:hover,
+body.galaxy .btn:hover,
+body.sakura .btn:hover,
+body.arctic .btn:hover {
     background: rgba(75, 85, 99, 0.3);
 }
 
@@ -979,7 +1784,13 @@ body.dark .modal-content,
 body.high-contrast .modal-content,
 body.midnight .modal-content,
 body.cyberpunk .modal-content,
-body.amethyst .modal-content {
+body.amethyst .modal-content,
+body.sunset .modal-content,
+body.forest .modal-content,
+body.neon .modal-content,
+body.galaxy .modal-content,
+body.sakura .modal-content,
+body.arctic .modal-content {
     background: rgba(55, 65, 81, 0.15);
     color: inherit;
 }
@@ -992,7 +1803,13 @@ body.dark .theme-dropdown,
 body.high-contrast .theme-dropdown,
 body.midnight .theme-dropdown,
 body.cyberpunk .theme-dropdown,
-body.amethyst .theme-dropdown {
+body.amethyst .theme-dropdown,
+body.sunset .theme-dropdown,
+body.forest .theme-dropdown,
+body.neon .theme-dropdown,
+body.galaxy .theme-dropdown,
+body.sakura .theme-dropdown,
+body.arctic .theme-dropdown {
     background: rgba(55, 65, 81, 0.15);
     color: inherit;
 }
@@ -1005,7 +1822,13 @@ body.dark .theme-option,
 body.high-contrast .theme-option,
 body.midnight .theme-option,
 body.cyberpunk .theme-option,
-body.amethyst .theme-option {
+body.amethyst .theme-option,
+body.sunset .theme-option,
+body.forest .theme-option,
+body.neon .theme-option,
+body.galaxy .theme-option,
+body.sakura .theme-option,
+body.arctic .theme-option {
     color: inherit;
 }
 
@@ -1017,7 +1840,13 @@ body.dark .theme-option:hover,
 body.high-contrast .theme-option:hover,
 body.midnight .theme-option:hover,
 body.cyberpunk .theme-option:hover,
-body.amethyst .theme-option:hover {
+body.amethyst .theme-option:hover,
+body.sunset .theme-option:hover,
+body.forest .theme-option:hover,
+body.neon .theme-option:hover,
+body.galaxy .theme-option:hover,
+body.sakura .theme-option:hover,
+body.arctic .theme-option:hover {
     background: rgba(75, 85, 99, 0.2);
 }
 
@@ -1029,7 +1858,13 @@ body.dark .question-item,
 body.high-contrast .question-item,
 body.midnight .question-item,
 body.cyberpunk .question-item,
-body.amethyst .question-item {
+body.amethyst .question-item,
+body.sunset .question-item,
+body.forest .question-item,
+body.neon .question-item,
+body.galaxy .question-item,
+body.sakura .question-item,
+body.arctic .question-item {
     color: inherit;
 }
 
@@ -1041,7 +1876,13 @@ body.dark .nav-btn,
 body.high-contrast .nav-btn,
 body.midnight .nav-btn,
 body.cyberpunk .nav-btn,
-body.amethyst .nav-btn {
+body.amethyst .nav-btn,
+body.sunset .nav-btn,
+body.forest .nav-btn,
+body.neon .nav-btn,
+body.galaxy .nav-btn,
+body.sakura .nav-btn,
+body.arctic .nav-btn {
     background: rgba(55, 65, 81, 0.15);
     color: inherit;
 }
@@ -1054,7 +1895,13 @@ body.dark .nav-btn:hover,
 body.high-contrast .nav-btn:hover,
 body.midnight .nav-btn:hover,
 body.cyberpunk .nav-btn:hover,
-body.amethyst .nav-btn:hover {
+body.amethyst .nav-btn:hover,
+body.sunset .nav-btn:hover,
+body.forest .nav-btn:hover,
+body.neon .nav-btn:hover,
+body.galaxy .nav-btn:hover,
+body.sakura .nav-btn:hover,
+body.arctic .nav-btn:hover {
     background: rgba(75, 85, 99, 0.3);
 }
 
@@ -1066,7 +1913,13 @@ body.dark .nav-btn.active,
 body.high-contrast .nav-btn.active,
 body.midnight .nav-btn.active,
 body.cyberpunk .nav-btn.active,
-body.amethyst .nav-btn.active {
+body.amethyst .nav-btn.active,
+body.sunset .nav-btn.active,
+body.forest .nav-btn.active,
+body.neon .nav-btn.active,
+body.galaxy .nav-btn.active,
+body.sakura .nav-btn.active,
+body.arctic .nav-btn.active {
     background: linear-gradient(90deg, #10b981, #059669);
     color: #ffffff;
 }
@@ -1079,7 +1932,13 @@ body.dark #dailyNotes,
 body.high-contrast #dailyNotes,
 body.midnight #dailyNotes,
 body.cyberpunk #dailyNotes,
-body.amethyst #dailyNotes {
+body.amethyst #dailyNotes,
+body.sunset #dailyNotes,
+body.forest #dailyNotes,
+body.neon #dailyNotes,
+body.galaxy #dailyNotes,
+body.sakura #dailyNotes,
+body.arctic #dailyNotes {
     background: rgba(55, 65, 81, 0.25);
     color: inherit;
 }
@@ -1092,7 +1951,13 @@ body.dark #dailyNotes:focus,
 body.high-contrast #dailyNotes:focus,
 body.midnight #dailyNotes:focus,
 body.cyberpunk #dailyNotes:focus,
-body.amethyst #dailyNotes:focus {
+body.amethyst #dailyNotes:focus,
+body.sunset #dailyNotes:focus,
+body.forest #dailyNotes:focus,
+body.neon #dailyNotes:focus,
+body.galaxy #dailyNotes:focus,
+body.sakura #dailyNotes:focus,
+body.arctic #dailyNotes:focus {
     background: rgba(75, 85, 99, 0.35);
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
@@ -1105,7 +1970,13 @@ body.dark .completion-toggle,
 body.high-contrast .completion-toggle,
 body.midnight .completion-toggle,
 body.cyberpunk .completion-toggle,
-body.amethyst .completion-toggle {
+body.amethyst .completion-toggle,
+body.sunset .completion-toggle,
+body.forest .completion-toggle,
+body.neon .completion-toggle,
+body.galaxy .completion-toggle,
+body.sakura .completion-toggle,
+body.arctic .completion-toggle {
     background: rgba(55, 65, 81, 0.5);
 }
 
@@ -1118,6 +1989,12 @@ body.high-contrast .day-number,
 body.midnight .day-number,
 body.cyberpunk .day-number,
 body.amethyst .day-number,
+body.sunset .day-number,
+body.forest .day-number,
+body.neon .day-number,
+body.galaxy .day-number,
+body.sakura .day-number,
+body.arctic .day-number,
 body.pastel .task-description,
 body.cloud .task-description,
 body.ivory .task-description,
@@ -1126,7 +2003,13 @@ body.dark .task-description,
 body.high-contrast .task-description,
 body.midnight .task-description,
 body.cyberpunk .task-description,
-body.amethyst .task-description {
+body.amethyst .task-description,
+body.sunset .task-description,
+body.forest .task-description,
+body.neon .task-description,
+body.galaxy .task-description,
+body.sakura .task-description,
+body.arctic .task-description {
     color: inherit;
 }
 
@@ -1138,7 +2021,13 @@ body.dark .month-stats,
 body.high-contrast .month-stats,
 body.midnight .month-stats,
 body.cyberpunk .month-stats,
-body.amethyst .month-stats {
+body.amethyst .month-stats,
+body.sunset .month-stats,
+body.forest .month-stats,
+body.neon .month-stats,
+body.galaxy .month-stats,
+body.sakura .month-stats,
+body.arctic .month-stats {
     color: inherit;
 }
 
@@ -1150,7 +2039,13 @@ body.dark .close,
 body.high-contrast .close,
 body.midnight .close,
 body.cyberpunk .close,
-body.amethyst .close {
+body.amethyst .close,
+body.sunset .close,
+body.forest .close,
+body.neon .close,
+body.galaxy .close,
+body.sakura .close,
+body.arctic .close {
     color: inherit;
 }
 
@@ -1162,7 +2057,13 @@ body.dark .close:hover,
 body.high-contrast .close:hover,
 body.midnight .close:hover,
 body.cyberpunk .close:hover,
-body.amethyst .close:hover {
+body.amethyst .close:hover,
+body.sunset .close:hover,
+body.forest .close:hover,
+body.neon .close:hover,
+body.galaxy .close:hover,
+body.sakura .close:hover,
+body.arctic .close:hover {
     color: #ffffff;
 }
 
@@ -1174,7 +2075,13 @@ body.dark .error-message,
 body.high-contrast .error-message,
 body.midnight .error-message,
 body.cyberpunk .error-message,
-body.amethyst .error-message {
+body.amethyst .error-message,
+body.sunset .error-message,
+body.forest .error-message,
+body.neon .error-message,
+body.galaxy .error-message,
+body.sakura .error-message,
+body.arctic .error-message {
     background: rgba(127, 29, 29, 0.9);
     color: #f87171;
 }
@@ -1187,7 +2094,13 @@ body.dark .resource-notes,
 body.high-contrast .resource-notes,
 body.midnight .resource-notes,
 body.cyberpunk .resource-notes,
-body.amethyst .resource-notes {
+body.amethyst .resource-notes,
+body.sunset .resource-notes,
+body.forest .resource-notes,
+body.neon .resource-notes,
+body.galaxy .resource-notes,
+body.sakura .resource-notes,
+body.arctic .resource-notes {
     color: inherit;
 }
 
@@ -1199,7 +2112,13 @@ body.dark .resource-meta,
 body.high-contrast .resource-meta,
 body.midnight .resource-meta,
 body.cyberpunk .resource-meta,
-body.amethyst .resource-meta {
+body.amethyst .resource-meta,
+body.sunset .resource-meta,
+body.forest .resource-meta,
+body.neon .resource-meta,
+body.galaxy .resource-meta,
+body.sakura .resource-meta,
+body.arctic .resource-meta {
     color: inherit;
 }
 
@@ -1267,4 +2186,84 @@ body.amethyst .resource-meta {
     .resources-section h3 {
         font-size: 1rem;
     }
+}
+
+/* Premium Theme Styles */
+body.sunset {
+  background: #1a0b2e;
+  color: #ffe4e1;
+}
+body.sunset .background-gradient {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fbc2eb 100%);
+  opacity: 0.4;
+}
+
+body.forest {
+  background: #0d1f14;
+  color: #e7f5e9;
+}
+body.forest .background-gradient {
+  background: linear-gradient(135deg, #14532d 0%, #166534 50%, #22c55e 100%);
+  opacity: 0.35;
+}
+
+body.neon {
+  background: #050505;
+  color: #00ffcc;
+}
+body.neon .background-gradient {
+  background: linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #ffff00 100%);
+  opacity: 0.35;
+}
+body.neon .btn-primary {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+body.galaxy {
+  background: radial-gradient(circle at 20% 20%, #0f172a 0%, #1e3a8a 60%, #111827 100%);
+  color: #e0e7ff;
+}
+body.galaxy .background-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #f472b6 100%);
+  opacity: 0.4;
+}
+
+body.sakura {
+  background: #fff0f5;
+  color: #6b0f1a;
+}
+body.sakura .background-gradient {
+  background: linear-gradient(135deg, #ffe4e6 0%, #fbcfe8 50%, #f9a8d4 100%);
+  opacity: 0.3;
+}
+
+body.arctic {
+  background: #e0f7fa;
+  color: #004d40;
+}
+body.arctic .background-gradient {
+  background: linear-gradient(135deg, #b2f5ea 0%, #81e6d9 50%, #38bdf8 100%);
+  opacity: 0.3;
+}
+
+/* Hover effects for premium themes */
+body.sunset .btn:hover,
+body.forest .btn:hover,
+body.neon .btn:hover,
+body.galaxy .btn:hover,
+body.sakura .btn:hover,
+body.arctic .btn:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  transform: translateY(-3px);
+}
+
+body.neon .day-card:hover,
+body.galaxy .day-card:hover,
+body.sunset .day-card:hover,
+body.forest .day-card:hover,
+body.sakura .day-card:hover,
+body.arctic .day-card:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
 }

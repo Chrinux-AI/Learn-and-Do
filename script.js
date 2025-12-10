@@ -530,6 +530,7 @@ class RoadmapTracker {
         this.currentTheme = localStorage.getItem('theme') || 'light';
         this.isLoading = false;
         this.activeDropdown = null;
+        this.openedReflection = null;
     }
 
     getCurrentMonth() {
@@ -885,24 +886,11 @@ class RoadmapTracker {
                 option.classList.toggle('active', option.dataset.theme === theme);
             });
 
-            const themeGroups = {
-                light: ['light', 'pastel', 'cloud', 'ivory', 'mint'],
-                dark: ['dark', 'high-contrast', 'midnight', 'cyberpunk', 'amethyst']
-            };
-
-            const currentGroup = Object.keys(themeGroups).find(group => 
-                themeGroups[group].includes(theme)
-            );
-
-            const toggles = document.querySelectorAll('.theme-toggle');
-            toggles.forEach(toggle => {
-                const isActive = toggle.dataset.themeGroup === currentGroup;
-                toggle.classList.toggle('active', isActive);
-                toggle.setAttribute('aria-pressed', isActive);
-            });
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.setAttribute('aria-pressed', 'true');
 
             if (this.activeDropdown) {
-                this.toggleThemeDropdown(this.activeDropdown.dataset.themeGroup, false);
+                this.toggleThemeDropdown(false);
             }
         } catch (error) {
             console.error('Set theme failed:', error);
@@ -910,32 +898,24 @@ class RoadmapTracker {
         }
     }
 
-    toggleThemeDropdown(themeGroup, forceOpen = null) {
+    toggleThemeDropdown(forceOpen = null) {
         try {
-            const dropdown = document.querySelector(`.theme-dropdown[data-theme-group="${themeGroup}"]`);
-            const toggle = document.querySelector(`.theme-toggle[data-theme-group="${themeGroup}"]`);
+            const dropdown = document.getElementById('themeDropdown');
+            const toggle = document.getElementById('themeToggle');
             const isOpen = forceOpen !== null ? forceOpen : !dropdown.classList.contains('active');
 
-            document.querySelectorAll('.theme-dropdown').forEach(d => {
-                d.classList.remove('active');
-                d.style.display = 'none';
-            });
-
-            document.querySelectorAll('.theme-toggle').forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-pressed', 'false');
-            });
-
-            if (isOpen) {
+            if (!isOpen) {
+                dropdown.classList.remove('active');
+                dropdown.style.display = 'none';
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-pressed', 'false');
+                this.activeDropdown = null;
+            } else {
                 dropdown.style.display = 'flex';
                 setTimeout(() => dropdown.classList.add('active'), 10);
                 toggle.classList.add('active');
                 toggle.setAttribute('aria-pressed', 'true');
                 this.activeDropdown = dropdown;
-            } else {
-                dropdown.classList.remove('active');
-                setTimeout(() => dropdown.style.display = 'none', 300);
-                this.activeDropdown = null;
             }
         } catch (error) {
             console.error('Toggle theme dropdown failed:', error);
@@ -987,17 +967,16 @@ class RoadmapTracker {
                 }
             });
 
-            // Theme toggles
-            document.querySelectorAll('.theme-toggle').forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    this.toggleThemeDropdown(toggle.dataset.themeGroup);
-                });
-                toggle.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.toggleThemeDropdown(toggle.dataset.themeGroup);
-                    }
-                });
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            themeToggle.addEventListener('click', () => {
+                this.toggleThemeDropdown();
+            });
+            themeToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.toggleThemeDropdown();
+                }
             });
 
             // Theme options
@@ -1016,7 +995,7 @@ class RoadmapTracker {
             // Close dropdown on outside click
             document.addEventListener('click', (e) => {
                 if (this.activeDropdown && !e.target.closest('.theme-toggle-wrapper')) {
-                    this.toggleThemeDropdown(this.activeDropdown.dataset.themeGroup, false);
+                    this.toggleThemeDropdown(false);
                 }
             });
 
@@ -1055,10 +1034,51 @@ class RoadmapTracker {
             document.getElementById('resetProgress').addEventListener('click', () => {
                 this.resetProgress();
             });
+
+            // Tab switching (Tasks/Resources)
+            document.querySelectorAll('.nav-btn[data-tab]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(`${tab}Tab`).classList.add('active');
+                    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+
+            // Resources (basic implementation - expand as needed)
+            document.getElementById('saveResource').addEventListener('click', () => {
+                const url = document.getElementById('resourceUrl').value;
+                const notes = document.getElementById('resourceNotes').value;
+                if (url && notes) {
+                    const saved = JSON.parse(localStorage.getItem('savedResources') || '[]');
+                    saved.push({ url, notes, date: new Date().toISOString() });
+                    localStorage.setItem('savedResources', JSON.stringify(saved));
+                    this.renderSavedResources();
+                    this.showNotification('Resource saved!');
+                    document.getElementById('resourceUrl').value = '';
+                    document.getElementById('resourceNotes').value = '';
+                }
+            });
+
+            this.renderSavedResources();
+            document.getElementById('currentMonthName').textContent = this.currentMonth.charAt(0).toUpperCase() + this.currentMonth.slice(1);
         } catch (error) {
             console.error('Bind events failed:', error);
             this.showNotification('Failed to initialize event listeners.');
         }
+    }
+
+    renderSavedResources() {
+        const saved = JSON.parse(localStorage.getItem('savedResources') || '[]');
+        const list = document.getElementById('savedResourcesList');
+        list.innerHTML = saved.map(item => `
+            <li class="neumorphic">
+                <a href="${item.url}" target="_blank">${item.url}</a>
+                <div class="resource-meta">Added: ${new Date(item.date).toLocaleDateString()}</div>
+                <div class="resource-notes">${item.notes}</div>
+            </li>
+        `).join('');
     }
 }
 

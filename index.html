@@ -1,122 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn&Do Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="./cyber.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Learning Roadmap - Learn&Do Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="./cyber.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="light">
-    <div class="container">
-        <div class="background-gradient"></div>
-        <header class="header">
-            <h1>🛡️ 🫥 Cybersecurity Roadmap 2025</h1>
-            <div class="progress-bar">
-                <div id="overallProgress" class="progress-fill"></div>
-            </div>
-            <span id="progressText" aria-live="polite">0%</span>
-            <div class="progress-controls">
-                <input type="file" id="importProgress" accept=".json" style="display: none;" aria-label="Import progress from JSON file">
-                <button class="btn btn-secondary" id="triggerImport" aria-label="Import progress">
-                    <span class="btn-icon">📥</span>
-                    <span class="btn-text">Import</span>
-                </button>
-                <button class="btn btn-secondary" id="exportProgress" aria-label="Export progress as JSON">
-                    <span class="btn-icon">📤</span>
-                    <span class="btn-text">Export</span>
-                </button>
-                <button class="btn btn-secondary" id="resetProgress" aria-label="Reset all progress">
-                    <span class="btn-icon">🔄</span>
-                    <span class="btn-text">Reset</span>
-                </button>
-            </div>
-        </header>
-
+  <div class="background-gradient"></div>
+  <div class="container">
+    <header class="header neumorphic">
+      <h1>🛡️ 🫥 Cybersecurity Learning Roadmap</h1>
+      <div class="progress-controls">
+        <div class="progress-bar">
+          <div id="overallProgress" class="progress-fill"></div>
+        </div>
+        <span id="progressText" aria-live="polite">0%</span>
+        <button id="analyticsBtn" class="btn btn-primary" aria-label="View detailed progress analytics">
+          <span class="btn-icon">📊</span>
+          <span class="btn-text">Analytics</span>
+        </button>
+      </div>
+      <div class="header-right">
+        <select id="yearPicker" class="year-picker" aria-label="Select year for planning"></select>
+        <select id="monthPicker" class="month-picker" aria-label="Select month"></select>
         <div class="theme-controls">
-            <div class="theme-toggle-wrapper">
-                <button class="btn btn-secondary theme-toggle" data-theme-group="light" aria-label="Toggle light themes" aria-pressed="true">
-                    <span class="btn-icon">☀️</span>
-                    <span class="btn-text">Light Themes</span>
-                </button>
-                <div class="theme-dropdown" data-theme-group="light" style="display: none;">
-                    <button class="theme-option" data-theme="light">Light</button>
-                    <button class="theme-option" data-theme="pastel">Pastel</button>
-                    <button class="theme-option" data-theme="cloud">Cloud</button>
-                    <button class="theme-option" data-theme="ivory">Ivory</button>
-                    <button class="theme-option" data-theme="mint">Mint</button>
-                </div>
+          <div class="theme-toggle-wrapper">
+            <button class="btn btn-secondary theme-toggle" data-theme-group="light" aria-label="Toggle light themes" aria-pressed="true">
+              <span class="btn-icon">☀️</span>
+              <span class="btn-text">Light</span>
+            </button>
+            <div class="theme-dropdown" data-theme-group="light" style="display: none;">
+              <button class="theme-option active" data-theme="light">Light</button>
+              <button class="theme-option" data-theme="pastel">Pastel</button>
+              <button class="theme-option" data-theme="cloud">Cloud</button>
+              <button class="theme-option" data-theme="ivory">Ivory</button>
+              <button class="theme-option" data-theme="mint">Mint</button>
+              <button class="theme-option" data-theme="sunset">Sunset Glow</button>
+              <button class="theme-option" data-theme="sakura">Sakura Bloom</button>
+              <button class="theme-option" data-theme="arctic">Arctic Blue</button>
             </div>
-            <div class="theme-toggle-wrapper">
-                <button class="btn btn-secondary theme-toggle" data-theme-group="dark" aria-label="Toggle dark themes" aria-pressed="false">
-                    <span class="btn-icon">🌙</span>
-                    <span class="btn-text">Dark Themes</span>
-                </button>
-                <div class="theme-dropdown" data-theme-group="dark" style="display: none;">
-                    <button class="theme-option" data-theme="dark">Dark</button>
-                    <button class="theme-option" data-theme="high-contrast">High Contrast</button>
-                    <button class="theme-option" data-theme="midnight">Midnight</button>
-                    <button class="theme-option" data-theme="cyberpunk">Cyberpunk</button>
-                    <button class="theme-option" data-theme="amethyst">Amethyst</button>
-                </div>
+          </div>
+          <div class="theme-toggle-wrapper">
+            <button class="btn btn-secondary theme-toggle" data-theme-group="dark" aria-label="Toggle dark themes" aria-pressed="false">
+              <span class="btn-icon">🌙</span>
+              <span class="btn-text">Dark</span>
+            </button>
+            <div class="theme-dropdown" data-theme-group="dark" style="display: none;">
+              <button class="theme-option" data-theme="dark">Dark</button>
+              <button class="theme-option" data-theme="high-contrast">High Contrast</button>
+              <button class="theme-option" data-theme="midnight">Midnight</button>
+              <button class="theme-option" data-theme="cyberpunk">Cyberpunk</button>
+              <button class="theme-option" data-theme="amethyst">Amethyst</button>
+              <button class="theme-option" data-theme="forest">Forest Dew</button>
+              <button class="theme-option" data-theme="neon">Neon Edge</button>
+              <button class="theme-option" data-theme="galaxy">Galaxy Dream</button>
             </div>
+          </div>
         </div>
+      </div>
+    </header>
 
-        <nav class="month-nav" aria-label="Month navigation">
-            <button class="nav-btn neumorphic active" data-tab="tasks" aria-label="Tasks tab">Tasks</button>
-            <button class="nav-btn neumorphic" data-tab="resources" aria-label="Resources tab">Resources</button>
-        </nav>
+    <nav class="month-nav" aria-label="Navigation tabs">
+      <button class="nav-btn neumorphic active" data-tab="tasks">Tasks</button>
+      <button class="nav-btn neumorphic" data-tab="general-resources">General Resources</button>
+      <button class="nav-btn neumorphic" data-tab="resources">Suggested & Saved Resources</button>
+    </nav>
 
-        <main>
-            <div id="tasksTab" class="tab-content active">
-                <div id="monthHeader" class="month-header">
-                    <h2 id="monthTitle">Loading...</h2>
-                    <div class="month-stats">
-                        <span id="daysCompleted" aria-live="polite">0/31</span>
-                        <span id="monthProgress" aria-live="polite">0%</span>
-                    </div>
-                </div>
-                <div id="daysGrid" class="days-grid" aria-label="Daily tasks"></div>
-            </div>
-            <div id="resourcesTab" class="tab-content">
-                <section class="resources-section" aria-label="Research resources">
-                    <h2>Research Resources</h2>
-                    <div class="resource-input">
-                        <input type="url" id="resourceUrl" placeholder="Enter resource URL" aria-label="Resource URL">
-                        <textarea id="resourceNotes" placeholder="Add notes about this resource" aria-label="Resource notes"></textarea>
-                        <button class="btn btn-primary" id="saveResource" aria-label="Save resource">Save Resource</button>
-                    </div>
-                    <div class="suggested-resources">
-                        <h3>Suggested Resources for <span id="currentMonthName"></span></h3>
-                        <ul id="suggestedResourcesList" role="list"></ul>
-                    </div>
-                    <div class="saved-resources">
-                        <h3>Your Saved Resources</h3>
-                        <ul id="savedResourcesList" role="list"></ul>
-                    </div>
-                </section>
-            </div>
-            <div id="errorMessage" class="error-message" role="alert" style="display: none;">
-                Failed to load content. Please try refreshing the page.
-            </div>
-        </main>
-
-        <!-- Reflection Modal -->
-        <div id="reflectionModal" class="modal" role="dialog" aria-labelledby="modalDayTitle">
-            <div class="modal-content">
-                <span id="closeModal" class="close" role="button" aria-label="Close modal">&times;</span>
-                <h3 id="modalDayTitle"></h3>
-                <div id="dailyQuestions" class="questions"></div>
-                <textarea id="dailyNotes" placeholder="Write your reflections here..." aria-label="Daily reflection notes"></textarea>
-                <div class="modal-buttons">
-                    <button id="cancelReflection" class="btn btn-secondary" aria-label="Cancel reflection">Cancel</button>
-                    <button id="saveReflection" class="btn btn-primary" aria-label="Save reflection">Save</button>
-                </div>
-            </div>
+    <main>
+      <div id="tasksTab" class="tab-content active">
+        <div id="monthHeader" class="month-header neumorphic">
+          <h2 id="monthTitle">Loading...</h2>
+          <div class="month-stats">
+            <span id="daysCompleted" aria-live="polite">0/31</span>
+            <span id="monthProgress" aria-live="polite">0%</span>
+          </div>
         </div>
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+          <div class="spinner"></div>
+          Loading days...
+        </div>
+        <div id="daysGrid" class="days-grid" aria-label="Daily tasks grid"></div>
+      </div>
+
+      <div id="generalResourcesTab" class="tab-content">
+        <section class="resources-section neumorphic">
+          <h2>General Resources</h2>
+          <div class="general-resources-list">
+            <ul id="generalResourcesList" role="list"></ul>
+          </div>
+        </section>
+      </div>
+
+      <div id="resourcesTab" class="tab-content">
+        <section class="resources-section neumorphic">
+          <h2>Suggested & Saved Resources</h2>
+          <div class="resource-input">
+            <input type="url" id="resourceUrl" placeholder="Enter resource URL" aria-label="Resource URL">
+            <textarea id="resourceNotes" placeholder="Add notes or summary..." aria-label="Resource notes"></textarea>
+            <button class="btn btn-primary" id="saveResource">Save Resource</button>
+          </div>
+          <div class="suggested-resources">
+            <h3>Suggested Resources for <span id="currentMonthName"></span></h3>
+            <ul id="suggestedResourcesList" role="list"></ul>
+          </div>
+          <div class="saved-resources">
+            <h3>Your Saved Resources</h3>
+            <ul id="savedResourcesList" role="list"></ul>
+          </div>
+        </section>
+      </div>
+
+      <div id="errorMessage" class="error-message" role="alert" style="display: none;"></div>
+    </main>
+
+    <!-- Reflection Modal -->
+    <div id="reflectionModal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content neumorphic">
+        <span id="closeModal" class="close" aria-label="Close">&times;</span>
+        <h3 id="modalDayTitle">Day Reflection</h3>
+        <div id="dailyQuestions" class="questions"></div>
+        <div id="dailyResources" class="daily-resources"></div>
+        <textarea id="dailyNotes" placeholder="Write your reflections..." aria-label="Reflection notes"></textarea>
+        <div class="modal-buttons">
+          <button id="cancelReflection" class="btn btn-secondary">Cancel</button>
+          <button id="saveReflection" class="btn btn-primary">Save Reflection</button>
+        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Analytics Modal -->
+    <div id="analyticsModal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content neumorphic">
+        <span id="closeAnalytics" class="close" aria-label="Close">&times;</span>
+        <h3>Detailed Progress Analytics 📈</h3>
+        <div id="analyticsContent">
+          <div class="stat-grid">
+            <div class="stat-card neumorphic"><h4>Total Completed</h4><span id="totalCompleted">0</span></div>
+            <div class="stat-card neumorphic"><h4>Current Streak</h4><span id="currentStreak">0</span> days</div>
+            <div class="stat-card neumorphic"><h4>Avg. Monthly</h4><span id="avgMonthly">0%</span></div>
+            <div class="stat-card neumorphic"><h4>Longest Streak</h4><span id="longestStreak">0</span> days</div>
+          </div>
+          <canvas id="progressChart" width="600" height="250"></canvas>
+          <div id="monthlyBreakdown" class="monthly-breakdown"></div>
+          <div class="modal-buttons">
+            <button id="exportAnalytics" class="btn btn-primary">Export CSV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
